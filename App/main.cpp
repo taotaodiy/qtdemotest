@@ -39,7 +39,7 @@ void CheckDirs(const QString &path, const QStringList &dirs) {
 int main(int argc, char *argv[])
 {
     // 设置输入法
-#if 1
+#if 0
     qputenv("QT_IM_MODULE", QByteArray("xyinput"));
 #else
     qputenv("QT_IM_MODULE", QByteArray("qtkeyboard"));
