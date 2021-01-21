@@ -29,7 +29,7 @@
 #include "gyroscope.h"
 #include "notepadwidget.h"
 #include "photosview.h"
-//#include "recorderwidget.h"
+#include "recorderwidget.h"
 #include "settingwidget.h"
 #include "videoplayer.h"
 #include "weatherwidget.h"
@@ -54,10 +54,10 @@
 
 #define MOUSE_DEV_PATH       "/dev/input/by-path"
 
-MainWindow::MainWindow(QWindow *parent) : QWindow(parent)
+MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
 {
 #ifdef __arm__
-    //this->setWindowFlags(Qt::FramelessWindowHint | Qt::Window);
+    this->setWindowFlags(Qt::FramelessWindowHint | Qt::Window);
 
     // 启动检测鼠标是否接入系统
     AppConfig::m_bMouseInsert = CheckMouseInsert();
@@ -95,7 +95,6 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::InitWidget() {
-    /*
     QVBoxLayout *verLayout = new QVBoxLayout(this);
     verLayout->setContentsMargins(0, 0, 0, 0);
     verLayout->setSpacing(0);
@@ -109,7 +108,7 @@ void MainWindow::InitWidget() {
     m_aboutUs = new AboutUs(this);
     m_aboutUs->hide();
     connect(m_launcherWidget, SIGNAL(signalAboutClicked()), m_aboutUs, SLOT(SltStartMove()));
-    */
+
 #if 0
     if (NULL == m_musicWidget) {
         m_musicWidget = new MusicPlayer(this);
@@ -201,7 +200,6 @@ void MainWindow::SltCurrentAppChanged(int index)
         }
     }
 
-    /*
     switch (index) {
     case 0: {
         m_widgetWorkSpace = new FileSystemWindow(this);
@@ -326,7 +324,6 @@ void MainWindow::SltCurrentAppChanged(int index)
         m_nCurrentIndex = -1;
         break;
     }
-    */
 
     if (NULL != m_widgetWorkSpace) {
         m_widgetWorkSpace->resize(this->size());
@@ -399,8 +396,7 @@ void MainWindow::resizeEvent(QResizeEvent *e)
     if (NULL != m_musicWidget) {
         m_musicWidget->resize(this->size());
     }
-    //QWidget::resizeEvent(e);
-    QWindow::resizeEvent(e);
+    QWidget::resizeEvent(e);
 }
 
 #ifdef BUILD_WIN_NES

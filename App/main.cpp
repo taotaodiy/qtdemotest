@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
     splash->Start();
 #else
     MainWindow w;
-    //w.setWindowTitle(QStringLiteral("野火 @ Linux Qt Demo"));
+    w.setWindowTitle(QStringLiteral("野火 @ Linux Qt Demo"));
     // 主要是控制HDMI输出，如果是LCD显示，此行无关紧要
     w.resize(AppConfig::GetDesktopSize());
 

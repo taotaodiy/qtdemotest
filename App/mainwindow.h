@@ -12,7 +12,6 @@
 #define MAINWINDOW_H
 
 #include <QWidget>
-#include <QWindow>
 
 #include "launcherwidget.h"
 #include "qtwidgetbase.h"
@@ -22,13 +21,12 @@
 
 class MusicPlayer;
 
-//class MainWindow : public QWidget
-class MainWindow : public QWindow
+class MainWindow : public QWidget
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWindow *parent = 0);
+    MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 private:

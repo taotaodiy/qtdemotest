@@ -175,9 +175,9 @@ void DownloadNetworkManager::parseVersionInfo(const QByteArray &data)
  */
 QString DownloadNetworkManager::GetFileMd5(const QString &name)
 {
-//    QFile file(name);
-//    if (!file.open(QIODevice::ReadOnly)) return QString();
-//    QByteArray ba = QCryptographicHash::hash(file.readAll(), QCryptographicHash::Md5);
-//    file.close();
-//    return ba.toHex().toUpper();
+    QFile file(name);
+    if (!file.open(QIODevice::ReadOnly)) return QString();
+    QByteArray ba = QCryptographicHash::hash(file.readAll(), QCryptographicHash::Md5);
+    file.close();
+    return ba.toHex().toUpper();
 }
