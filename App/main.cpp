@@ -40,9 +40,9 @@ int main(int argc, char *argv[])
 {
     // 设置输入法
 #if 0
-    qputenv("QT_IM_MODULE", QByteArray("xyinput"));
+    //qputenv("QT_IM_MODULE", QByteArray("xyinput"));
 #else
-    qputenv("QT_IM_MODULE", QByteArray("qtkeyboard"));
+    //qputenv("QT_IM_MODULE", QByteArray("qtkeyboard"));
 #endif
 
     QApplication a(argc, argv);
