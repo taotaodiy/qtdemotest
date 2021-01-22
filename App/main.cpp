@@ -38,14 +38,13 @@ void CheckDirs(const QString &path, const QStringList &dirs) {
 
 int main(int argc, char *argv[])
 {
-    /*
     // 设置输入法
-#if 0
-    //qputenv("QT_IM_MODULE", QByteArray("xyinput"));
+#if 1
+    qputenv("QT_IM_MODULE", QByteArray("xyinput"));
 #else
-    //qputenv("QT_IM_MODULE", QByteArray("qtkeyboard"));
+    qputenv("QT_IM_MODULE", QByteArray("qtkeyboard"));
 #endif
-    */
+
 
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
     QApplication a(argc, argv);
@@ -80,7 +79,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.setWindowTitle(QStringLiteral("野火 @ Linux Qt Demo"));
     // 主要是控制HDMI输出，如果是LCD显示，此行无关紧要
-    w.resize(AppConfig::GetDesktopSize());
+    // w.resize(AppConfig::GetDesktopSize());
 
 #ifdef __arm__
     w.showFullScreen();

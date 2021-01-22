@@ -29,7 +29,7 @@
 #include "gyroscope.h"
 #include "notepadwidget.h"
 #include "photosview.h"
-#include "recorderwidget.h"
+//#include "recorderwidget.h"
 #include "settingwidget.h"
 #include "videoplayer.h"
 #include "weatherwidget.h"
@@ -291,7 +291,7 @@ void MainWindow::SltCurrentAppChanged(int index)
     }
         break;
     case 18: {
-        m_widgetWorkSpace = new RecorderWidget(this);
+        //m_widgetWorkSpace = new RecorderWidget(this);
     }
         break;
     case 19: {
